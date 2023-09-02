@@ -5,6 +5,10 @@ import openai
 import re
 import streamlit as st
 
+
+
+
+
 # DESIGN implement changes to the standard streamlit UI/UX
 st.set_page_config(page_title="email_reply", page_icon="img/icon_128.png",)
 # Design move app further up and remove top padding
@@ -38,11 +42,12 @@ st.markdown(hide_streamlit_footer, unsafe_allow_html=True)
 # openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # auth_token = st.secrets["openai"]["api_key"]
-# Load the API key from the environment variable
-api_key = os.getenv("OPENAI_API_KEY")
 
-# Print the API key to the Streamlit app
-st.write(f"API Key: {api_key}")
+
+# Access the OpenAI API key from secrets.toml
+openai_api_key = st.secrets["openai"]["api_key"]
+
+
 
 def extract_names_from_email(email_content):
     # Extract sender and recipient names from the email content
