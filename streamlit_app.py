@@ -35,8 +35,9 @@ st.markdown(hide_streamlit_footer, unsafe_allow_html=True)
 
 # Connect to OpenAI GPT-3, fetch API key from Streamlit secrets
 # openai.api_key = os.getenv("you_api_key") commented
-openai.api_key = os.getenv("OPENAI_API_KEY")
+# openai.api_key = os.getenv("OPENAI_API_KEY")
 
+auth_token = st.secrets["openai"]["api_key"]
 
 
 def extract_names_from_email(email_content):
@@ -122,4 +123,4 @@ def main_gpt3emailgen():
 
 if __name__ == '__main__':
     # call main function
-    main_gpt3emailgen()
+    main_gpt3emailgen() 
