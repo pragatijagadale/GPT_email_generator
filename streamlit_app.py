@@ -37,8 +37,12 @@ st.markdown(hide_streamlit_footer, unsafe_allow_html=True)
 # openai.api_key = os.getenv("you_api_key") commented
 # openai.api_key = os.getenv("OPENAI_API_KEY")
 
-auth_token = st.secrets["openai"]["api_key"]
+# auth_token = st.secrets["openai"]["api_key"]
+# Load the API key from the environment variable
+api_key = os.getenv("OPENAI_API_KEY")
 
+# Print the API key to the Streamlit app
+st.write(f"API Key: {api_key}")
 
 def extract_names_from_email(email_content):
     # Extract sender and recipient names from the email content
