@@ -39,13 +39,13 @@ st.markdown(hide_streamlit_footer, unsafe_allow_html=True)
 
 # Connect to OpenAI GPT-3, fetch API key from Streamlit secrets
 # openai.api_key = os.getenv("you_api_key") commented
-# openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # auth_token = st.secrets["openai"]["api_key"]
 
 
 # Access the OpenAI API key from secrets.toml
-openai_api_key = st.secrets["openai"]["api_key"]
+# openai_api_key = st.secrets["openai"]["api_key"]
 
 
 
